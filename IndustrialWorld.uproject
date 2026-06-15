@@ -16,22 +16,8 @@
 	],
 	"Plugins": [
 		{
-			"Name": "ModelingToolsEditorMode",
-			"Enabled": true,
-			"TargetAllowList": [ "Editor" ]
-		},
-		{
-			"Name": "GeometryScripting",
-			"Enabled": true
-		},
-		{
 			"Name": "EnhancedInput",
 			"Enabled": true
-		},
-		{
-			"Name": "RealtimeMeshComponent",
-			"Enabled": true,
-			"MarketplaceURL": "https://www.fab.com/listings/bb2e4fbb-617c-41d3-aac6-e181eddf8b3b"
 		}
 	]
 }

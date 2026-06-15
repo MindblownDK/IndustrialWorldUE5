@@ -8,32 +8,20 @@ public class IndustrialWorld : ModuleRules
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 		CppStandard = CppStandardVersion.Cpp20;
 
+		// Phase A only needs the engine essentials. Heavier dependencies
+		// (RealtimeMeshComponent, GeometryCore, UMG/Slate, EnhancedInput, ...)
+		// are added in the phase that first #includes their headers, so the
+		// module always compiles cleanly regardless of plugin install state.
 		PublicDependencyModuleNames.AddRange(new string[]
 		{
 			"Core",
 			"CoreUObject",
-			"Engine",
-			"InputCore",
-			"EnhancedInput",
-			"GeometryCore",
-			"GeometryFramework",
-			"ProceduralMeshComponent",
-			"RealtimeMeshComponent",
-			"UMG",
-			"Slate",
-			"SlateCore",
-			"RenderCore",
-			"RHI"
+			"Engine"
 		});
 
 		PrivateDependencyModuleNames.AddRange(new string[]
 		{
-			"Projects",
-			"DeveloperSettings"
+			"Projects"
 		});
-
-		// Voxel meshing is hot-path; keep optimizations on even in Development.
-		MinFilesUsingPrecompiledHeaderOverride = 1;
-		bUseUnity = true;
 	}
 }
